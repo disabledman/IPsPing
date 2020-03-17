@@ -31,6 +31,9 @@ namespace IPsPing
             timer1.Interval = Int32.Parse(numericUpDown1.Value.ToString()) * 1000;
             timer1.Enabled = true;
             Log("Start!");
+
+            button5.Enabled = true;
+            buttonStart.Enabled = false;
         }
 
         //
@@ -82,7 +85,7 @@ namespace IPsPing
         private void Form1_Shown(object sender, EventArgs e)
         {
             numericUpDown1.Value = 5;
-
+            button5.Enabled = false;
             listBox1.Items.Clear();
             timer2.Start();
         }
@@ -110,6 +113,9 @@ namespace IPsPing
         {
             timer1.Enabled = false;
             Log("Stop!");
+
+            button5.Enabled = false;
+            buttonStart.Enabled = true;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
